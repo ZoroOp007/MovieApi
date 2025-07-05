@@ -9,9 +9,13 @@ from datetime import timedelta, datetime
 from .models import User
 from .schemas import UserCreate, UserUpdate
 
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")  # hasing password
 oauth2_bearer = OAuth2PasswordBearer(tokenUrl="v1/auth/token")
-SECRET_KEY = "mysecretkey"
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"  # encoding our jwt
 TOKEN_EXPIRE_MINS = 60 * 24 * 30  # 30 days
 
