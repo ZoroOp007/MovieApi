@@ -20,8 +20,9 @@ async def read_item():
         "title" : app.version,
         "description" : app.description,
         "version" : app.version,
-        "greet" : "Hello, this is movie api developed by Badal to serve the purpose of building a backend service for modern Movie app"
+        "greet" : "Hello, this is movie api developed by Badal and Deepak to serve our movie app which allows user to binge watch the movie along with their friends. It allows real-time chatting to feel the presence on one another even after being at distance."
     }
+    
     return message
 
     
