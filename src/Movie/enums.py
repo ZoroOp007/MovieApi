@@ -11,9 +11,12 @@ class Genre(Enum,str):
     THRILLER = "thriller"
     WESTERN = "western"
 
+
+
 class Rating(Enum,str):
     U = "unrestricted"
     UA = "unrestricted with parental guidance"
     A = "adult"
     S = "restricted to special class"
+
     
