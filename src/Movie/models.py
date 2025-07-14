@@ -1,6 +1,7 @@
 from sqlalchemy import Column,Date,DateTime,Enum,Integer,String,ForeignKey
 from datetime import datetime
 from sqlalchemy.orm import relationship
+from typing import List
 
 from ..Auth.enums import Gender
 from .enums import Genre,Rating
@@ -26,9 +27,7 @@ class Movie(Base):
     description = Column(String)
     genre = Column(Enum(Genre))
     year_released = Column(Integer)
-    cast = Column(list)
     runtime = Column(datetime)
-    director_id = Column(Integer,ForeignKey=("Director.id"))
 
     #other useful attributes
     budget = Column(Integer)
@@ -38,6 +37,10 @@ class Movie(Base):
     country = Column(String)
     poster_url = Column(String)
     trailer_url = Column(String)
+
+    #Cast and Director
+    director_id = Column(Integer,ForeignKey=("Director.id"))
+    cast = Column(list)
 
     class config:
         orm_mode = True

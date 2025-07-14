@@ -4,15 +4,6 @@ from typing import Optional
 
 from .enums import Genre, Rating
 
-#  id = Column(Integer, primary_key = True, index = True,autoincrement=True)
-#     title = Column(String,unique = True,index = True)
-#     description = Column(String)
-#     genre = Column(Enum(Genre))
-#     year_released = Column()
-#     cast = Column(list)
-#     runtime = Column(datetime)
-#     director_id = Column(Integer,ForeignKey=("Director.id"))
-
 class MovieBase(BaseModel):
     title : str
     description : str
@@ -21,6 +12,8 @@ class MovieBase(BaseModel):
     cast : list
     runtime : datetime
     director_id : int
+
+class UpdateMovie(MovieBase):
 
 
 # class UserBase(BaseModel):
